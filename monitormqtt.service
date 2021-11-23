@@ -1,0 +1,13 @@
+[Unit]
+Description=MonitorMQTT daemon
+After=multi-user.target
+
+[Service]
+WorkingDirectory=~/PyMonitorMQTT
+#User=nobody
+Type=idle
+ExecStart=/usr/local/bin/pipenv run python3 ~/PyMonitorMQTT/main.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
